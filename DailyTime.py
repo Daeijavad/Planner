@@ -30,7 +30,7 @@ class Title(TextInput):
 class Daily(App):
 
     def build(self):
-        directory = '/home/user/data/'
+        directory = os.path.dirname(__file__)+'\\'
         if not os.path.exists(directory):
             os.makedirs(directory)
         self.csvpath = directory + 'DailyTime.csv'
@@ -38,7 +38,7 @@ class Daily(App):
             data = [[str(datetime.now().strftime("%Y-%m-%d %H:%M:%S")), '0:00:0', '', 'start', '']]
             header = ['time', 'spend_time', 'type', 'title', 'description']
             data.insert(0, header)
-            with open(self.csvpath, 'w') as file:
+            with open(self.csvpath, 'w', newline='') as file:
                 writer = csv.writer(file, delimiter=',')
                 writer.writerows(data)
 
@@ -104,7 +104,7 @@ class Daily(App):
             data.insert(0, newrow)
             data.insert(0,header)
 
-        with open(self.csvpath, 'w') as file:
+        with open(self.csvpath, 'w', newline='') as file:
                 writer = csv.writer(file, delimiter=',')
                 writer.writerows(data)
         App.get_running_app().stop()
