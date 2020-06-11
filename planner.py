@@ -2,6 +2,6 @@ import os
 import time
 
 while True:
-    exec(open(os.path.dirname(__file__) + '.\DailyTime.py').read())
+    os.system('python ' + os.path.dirname(__file__) + '.\DailyTime.py')
     time.sleep(1200)
     print()
