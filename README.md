@@ -8,3 +8,5 @@ For installing needed packages run the following command.
 Run the following command for starting the program.
 
     $ python planner.py
+
+Note: place all files in same folder to work with
