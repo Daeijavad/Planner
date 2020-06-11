@@ -9,4 +9,4 @@ Run the following command for starting the program.
 
     $ python planner.py
 
-Note: place all files in same folder to work with
+Note: place all files in a folder to work with
