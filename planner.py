@@ -1,9 +1,7 @@
 import os
-import pause
-from datetime import datetime, timedelta
+import time
 
-python = "/usr/bin/python"
 while True:
-    os.system(python + ' ~/bin/DailyTime.py')
-    pause.until(datetime.now() + timedelta(minutes=20))
+    exec(open(os.path.dirname(__file__) + 'DailyTime.py').read())
+    time.sleep(1200)
     print()
